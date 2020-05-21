@@ -12,7 +12,7 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
 
     constructor(private http: HttpClient) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentProvider')));
         this.currentUser = this.currentUserSubject.asObservable();
     }
 
@@ -46,7 +46,7 @@ export class AuthenticationService {
                             user["firstName"] = data["nombre"];
                             user["lastName"] = data["apellido"];
                             user["token"] = 'fake-jwt-token';
-                        localStorage.setItem('currentUser', JSON.stringify(user));
+                        localStorage.setItem('currentProvider', JSON.stringify(user));
                         self.currentUserSubject.next(user);
                         resolve(user);
                     }
@@ -62,7 +62,7 @@ export class AuthenticationService {
 
     logout() {
         // remove user from local storage and set current user to null
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem('currentProvider');
         this.currentUserSubject.next(null);
     }
 }

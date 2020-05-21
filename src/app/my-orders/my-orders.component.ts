@@ -24,6 +24,9 @@ export class MyOrdersComponent implements OnInit {
 
   	return $(`<li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 		<h5>${stockItem.nombre_combo} ($ ${stockItem.precio_individual})</h5>
+    <div class="mt-2 mb-2">
+      Circuito: ${stockItem.circuito}
+    </div>
 		<div class="d-flex w-100 justify-content-between">
 			<small class="mb-1">${stockItem.detalle}</small>
 		</div>
