@@ -18,7 +18,6 @@ export class UserService {
             formData.append("dni", user.username);
             formData.append("mail", user.email);
             formData.append("nro_cel", user.phone);
-            formData.append("clave", user.password);
             formData.append("direccion", user.domicilio);
             formData.append("referencia", user.referencia);
             formData.append("barrio", user.barrio);
@@ -33,8 +32,8 @@ export class UserService {
                 type: 'post',
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    resolve(data);
+                success: function (msg) {
+                    resolve(msg);
                 },
                 "error": function (request, status) {
                     reject(request.responseText);

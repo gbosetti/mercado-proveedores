@@ -43,8 +43,7 @@ export class RegisterComponent implements OnInit {
             cuil: ['', Validators.required],
             cbu: ['', Validators.required],
             localidad: ['', Validators.required],
-            referencia: ['', Validators.required],
-            password: ['', [Validators.required]] //, ValidationService.passwordValidator]],
+            referencia: ['', Validators.required]
         });
         $('input:text:visible:first').focus();
     }
@@ -62,9 +61,9 @@ export class RegisterComponent implements OnInit {
 
         this.loading = true;
         this.userService.register(this.registerForm.value).then(
-            data => {
+            msg => {
                 this.router.navigate(['/login']).then(()=>{
-                  bootbox.alert({ message: 'Se ha registrado correctamente.' });
+                  bootbox.alert({ message: msg });
                 });
             },
             error => {
