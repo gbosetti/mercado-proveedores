@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
       <input type="number" formControlName="stock" class="form-control stock" placeholder="Ej. 50"/>
     </div>
 		<div class="btn-group mt-3" role="group" style="width: 100%">
-		  <button type="button" class="btn btn-primary remove-from-cart"><i class="fa fa-remove" aria-hidden="true"></i> Eliminar</button>
+		  <button aria-label="Eliminar combo ${target.attr('combo_nombre')}" type="button" class="btn btn-primary remove-from-cart"><i class="fa fa-remove" aria-hidden="true"></i> Eliminar</button>
 		</div>
 	</li>`);
   	$(".combos-pedidos").append(combo);
@@ -90,11 +90,11 @@ export class HomeComponent implements OnInit {
 	    message: "Una vez registrada, la carga de stock no puede ser modificada ni cancelada. ¿Estas seguro de querer registrarla?",
 	    buttons: {
 	        confirm: {
-	            label: '<i class="fa fa-check" aria-hidden="true"></i> Si',
+	            label: '<i aria-label="Confirmar el registro de stock" class="fa fa-check" aria-hidden="true"></i> Si',
 	            className: 'btn-primary'
 	        },
 	        cancel: {
-	            label: '<i class="fa fa-times" aria-hidden="true"></i> No',
+	            label: '<i aria-label="Cancelar el registro de stock" class="fa fa-times" aria-hidden="true"></i> No',
 	            className: 'btn-secondary'
 	        }
 	    },
@@ -124,12 +124,12 @@ export class HomeComponent implements OnInit {
     	categories.forEach(e => {
         	$("#categories").append(this.createCategory(e));
         });
-        $("#categories").append($(`<option value="-1" selected>Todas las categorias</option>`));
+        $("#categories").append($(`<option aria-label="Opcion todas las categorias" value="-1" selected>Todas las categorias</option>`));
     });
   }
 
   createCategory(category){
-  	return $(`<option value="${category.id}">${category.nombre_categoria}</option>`);
+  	return $(`<option aria-label="Opcion ${category.nombre_categoria}" value="${category.id}">${category.nombre_categoria}</option>`);
   }
 
   loadCircuits(){
@@ -189,7 +189,7 @@ export class HomeComponent implements OnInit {
 		</div>
 		<i><small>${combo.detalle}</small></i>
 		<div class="btn-group mt-3" role="group" style="width: 100%">
-		  <button combo_nombre="${combo.combo_nombre}" combo_precio="${combo.combo_precio}" detalle="${combo.detalle}" id="${combo.combo_id}" type="button" class="btn btn-primary add-to-cart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar stock</button>
+		  <button aria-label="Agregar stock al combo ${combo.combo_nombre}" combo_nombre="${combo.combo_nombre}" combo_precio="${combo.combo_precio}" detalle="${combo.detalle}" id="${combo.combo_id}" type="button" class="btn btn-primary add-to-cart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar stock</button>
 		</div>
 	</li>`);
   }

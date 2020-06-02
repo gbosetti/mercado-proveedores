@@ -8,77 +8,77 @@
 				            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 				                <div class="form-group">
 				                    <label for="firstName">Nombre</label>
-				                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+				                    <input aria-label="Ingresar nombre" type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
 				                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
 				                        <div *ngIf="f.firstName.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="lastName">Apellido</label>
-				                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+				                    <input aria-label="Ingresar apellido" type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
 				                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
 				                        <div *ngIf="f.lastName.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="username">DNI (sin puntos)</label>
-				                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+				                    <input type="text" aria-label="Ingresar DNI sin puntos" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
 				                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
 				                        <div *ngIf="f.username.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="cuil">CUIL (sin guiones)</label>
-				                    <input type="text" formControlName="cuil" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cuil.errors }" />
+				                    <input type="text" aria-label="Ingresar CUIL sin guiones ni puntos" formControlName="cuil" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cuil.errors }" />
 				                    <div *ngIf="submitted && f.cuil.errors" class="invalid-feedback">
 				                        <div *ngIf="f.cuil.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="cbu">CBU</label>
-				                    <input type="text" formControlName="cbu" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cbu.errors }" />
+				                    <input type="text" aria-label="Ingresar CBU sin espacios" formControlName="cbu" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cbu.errors }" />
 				                    <div *ngIf="submitted && f.cbu.errors" class="invalid-feedback">
 				                        <div *ngIf="f.cbu.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="email">E-mail</label>
-				                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+				                    <input type="text" aria-label="Ingresar email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
 				                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
 				                        <div *ngIf="f.email.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="phone">Teléfono</label>
-				                    <input type="text" formControlName="phone" placeholder="+54 9 380 44..." class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+				                    <input type="text" aria-label="Ingresar teléfono" formControlName="phone" placeholder="+54 9 380 44..." class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
 				                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
 				                        <div *ngIf="f.phone.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="domicilio">Domicilio</label>
-				                    <input type="text" formControlName="domicilio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.domicilio.errors }" />
+				                    <input type="text" aria-label="Ingresar calle y número" formControlName="domicilio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.domicilio.errors }" />
 				                    <div *ngIf="submitted && f.domicilio.errors" class="invalid-feedback">
 				                        <div *ngIf="f.domicilio.errors.required">Este es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="referencia">Referencia del inmueble</label>
-				                    <input type="text" formControlName="referencia" placeholder="Ej. rejas negras" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.referencia.errors }" />
+				                    <input type="text" aria-label="Ingresar una referencia del inmueble. Por ejemplo, rejas negras." formControlName="referencia" placeholder="Ej. rejas negras" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.referencia.errors }" />
 				                    <div *ngIf="submitted && f.referencia.errors" class="invalid-feedback">
 				                        <div *ngIf="f.referencia.errors.required">Por favor, infique una referencia de sucasa</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="barrio">Barrio</label>
-				                    <input type="text" formControlName="barrio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.barrio.errors }" />
+				                    <input type="text" aria-label="Ingresar barrio" formControlName="barrio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.barrio.errors }" />
 				                    <div *ngIf="submitted && f.barrio.errors" class="invalid-feedback">
 				                        <div *ngIf="f.barrio.errors.required">El barrio es un campo obligatorio</div>
 				                    </div>
 				                </div>
 				                <div class="form-group">
 				                    <label for="localidad">Localidad</label>
-				                    <input type="text" formControlName="localidad" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.localidad.errors }" />
+				                    <input type="text" aria-label="Ingresar localidad" formControlName="localidad" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.localidad.errors }" />
 				                    <div *ngIf="submitted && f.localidad.errors" class="invalid-feedback">
 				                        <div *ngIf="f.localidad.errors.required">La localidad es un campo obligatorio</div>
 				                    </div>
@@ -87,8 +87,8 @@
 				                    <label for="password">Una vez registrado, recibirás tu contraseña en el mail especificado.</label>
 				                </div>
 				                <div class="form-group">
-				                    <a routerLink="/login" class="btn btn-link">Cancelar</a>
-				                    <button [disabled]="loading" class="btn btn-primary float-right">
+				                    <a routerLink="/login" aria-label="Cancelar registro" class="btn btn-link">Cancelar</a>
+				                    <button [disabled]="loading" aria-label="Registrarme" class="btn btn-primary float-right">
 				                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
 				                        Registrarse
 				                    </button>

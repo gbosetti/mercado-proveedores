@@ -23,14 +23,14 @@ export class MyOrdersComponent implements OnInit {
   createStockItem(stockItem){
 
   	return $(`<li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-		<h5>${stockItem.nombre_combo} ($ ${stockItem.precio_individual})</h5>
-    <div class="mt-2 mb-2">
+		<h5 aria-label="Combo ${stockItem.nombre_combo}">${stockItem.nombre_combo} ($ ${stockItem.precio_individual})</h5>
+    <div class="mt-2 mb-2" aria-label="del circuito ${stockItem.circuito}">
       Circuito: ${stockItem.circuito}
     </div>
-		<div class="d-flex w-100 justify-content-between">
+		<div class="d-flex w-100 justify-content-between" aria-label="Detalle ${stockItem.detalle}">
 			<small class="mb-1">${stockItem.detalle}</small>
 		</div>
-    <div class="mt-2">
+    <div class="mt-2" aria-label="Stock ofrecido ${stockItem.stock_inicial}">
       Mi stock ofrecido: ${stockItem.stock_inicial}
     </div>
 	</li>`);

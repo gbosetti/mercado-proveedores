@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://turismoapp.larioja.gov.ar/public/mercado_popular/backend/'
+  apiUrl: 'https://economiapopular.larioja.gob.ar/mercado-popular/endpoints/'
 };
 
 /*
